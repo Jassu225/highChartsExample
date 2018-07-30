@@ -15,6 +15,7 @@ Highcharts.chart('chart', {
     },
     xAxis: {
         gridLineWidth: 1,
+        gridLineColor: '#88888866',
         title: {
             enabled: true,
             text: '<b>BRAND EQUITY % CHANGE</b>'
@@ -36,6 +37,7 @@ Highcharts.chart('chart', {
         },
         gridZIndex: -10,
         gridLineWidth: 1,
+        gridLineColor: '#88888866',
         tickColor: '#777',
         tickWidth: 1
         // minorTicks: true,
