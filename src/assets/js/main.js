@@ -24,12 +24,7 @@ Highcharts.chart('chart', {
         startOnTick: true,
         endOnTick: true,
         max: 3.5,
-        tickColor: '#777',
-        // minorTicks: true,
-        // minorTickInterval: 10,
-        // minorTickWidth: 1,
-        // minorTickColor: 'black',
-        // minorTickLength: 10
+        tickColor: '#777'
     },
     yAxis: {
         title: {
@@ -40,11 +35,6 @@ Highcharts.chart('chart', {
         gridLineColor: '#88888866',
         tickColor: '#777',
         tickWidth: 1
-        // minorTicks: true,
-        // minorTickInterval: 10,
-        // minorTickWidth: 1,
-        // minorTickColor: 'black',
-        // minorTickLength: 10
     },
     plotOptions: {
         scatter: {
@@ -71,7 +61,7 @@ Highcharts.chart('chart', {
             dataLabels: {
                 enabled: true,
                 align: 'left',
-                format: '{series.name} <br /> {point.name}',
+                format: '{point.country} <br /> BRAND {point.brand}',
                 backgroundColor: 'white',
                 borderRadius: 4,
                 color: 'black',
@@ -84,28 +74,37 @@ Highcharts.chart('chart', {
     series: [
         {
             name: 'OPPORTUNITY - 7',
-            color: 'green',
+            color: '#55ce55',
             marker: {
                 symbol: 'url(assets/images/legend-symbol-green.svg)'
             },
             data: [
+                {x:1.78, y:2.95, country: 'AUSTRALIA', brand: '3', marker: { symbol: 'circle' }},
+                {x:1.87, y:2.1, country: 'AUSTRALIA', brand: '8', marker: { symbol: 'circle' }},
+                {x:2.55, y:0.9, country: 'AUSTRALIA', brand: '10', marker: { symbol: 'circle' }}
             ]
         },
         {
             name: 'POTENTIAL OPPORTUNITY - 8',
-            color: 'yellow',
+            color: '#f2d95d',
             marker: {
                 symbol: 'url(assets/images/legend-symbol-yellow.svg)'
             },
-            data: []
+            data: [
+                {x: 1.22, y: 1, country: 'BRAZIL', brand: '6', marker: { symbol: 'circle' }}
+            ]
         },
         {
             name: 'NO OPPORTUNITY - 4',
-            color: 'crimsonred',
+            color: 'red',
             marker: {
-                symbol: 'url(assets/images/legend-symbol-red.svg)'
+                symbol: 'url(assets/images/legend-symbol-red.svg)',
             },
-            data: []
+            data: [
+                {x:0.65, y:2.52,country: 'UK', brand: '2', marker: { symbol: 'circle' }},
+                {x:2, y:1, country: 'UK',brand: '7', marker: { symbol: 'circle' }},
+                {x:2.95, y:1.7,country: 'UK', brand: '9', marker: { symbol: 'circle' }}
+            ]
         },
         {
             name: 'JAPAN',
@@ -115,22 +114,12 @@ Highcharts.chart('chart', {
                 {
                     x: 0.2,
                     y: 3,
-                    name: 'BRAND 1',
+                    brand: '1',
                 }
-            ]
-        },
-        {
-            name: 'UK',
-            color: 'red',
-            showInLegend: false,
-            marker: {
-                symbol: 'circle'
-            },
-            data: [
-                {x:0.65, y:2.52, name: 'BRAND 2'},
-                {x:2, y:1, name: 'BRAND 7'},
-                {x:2.95, y:1.7, name: 'BRAND 9'}
-            ]
+            ],
+            dataLabels: {
+                format: '{series.name} <br /> BRAND {point.brand}'
+            }
         },
         {
             name: 'KSA',
@@ -140,33 +129,12 @@ Highcharts.chart('chart', {
                 symbol: 'circle'
             },
             data: [
-                {x:0.75, y:1.6, name: 'BRAND 4'},
-                {x:1.5, y:2, name: 'BRAND 5'}
-            ]
-        },
-        {
-            name: 'BRAZIL',
-            color: '#f2d95d',
-            showInLegend: false,
-            marker: {
-                symbol: 'circle'
-            },
-            data: [
-                {x: 1.22, y: 1, name: 'BRAND 6'}
-            ]
-        },
-        {
-            name: 'AUSTRALIA',
-            color: '#42af19',
-            showInLegend: false,
-            marker: {
-                symbol: 'circle'
-            },
-            data: [
-                {x:1.78, y:2.95, name: 'BRAND 3'},
-                {x:1.87, y:2.1, name: 'BRAND 8'},
-                {x:2.55, y:0.9, name: 'BRAND 10'}
-            ]
+                {x:0.75, y:1.6, brand: '4'},
+                {x:1.5, y:2, brand: '5'}
+            ],
+            dataLabels: {
+                format: '{series.name} <br /> BRAND {point.brand}'
+            }
         }
     ]
 });
